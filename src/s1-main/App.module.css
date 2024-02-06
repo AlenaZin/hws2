@@ -1,0 +1,28 @@
+.App {
+    --header_height: 60px;
+    width: 1280px;
+    min-height: 373px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.hw {
+    width: 1280px;
+    min-height: 373px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 25px 70px 30px 70px;
+    position: relative;
+    border: 1px solid #D9D9D9;
+    display: flex;    
+}
+
+.hwTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0em; 
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
