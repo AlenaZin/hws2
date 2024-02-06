@@ -1,14 +1,15 @@
 .friendMessage {
-  max-width: 575px;
+  width: 100%;
   min-height: 77px;
-  position: absolute;
-  left: 70px;
-  top: 130px;
+  display: flex;
+  margin: 24px 0;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .friendImageAndText {
 display: flex;
-position: relative;
+
 }
 
 .friendImageAndText img {
@@ -22,12 +23,13 @@ position: relative;
   background-color: #F5F7FB;
   border-radius: 10px;
   box-shadow: 0 10px 17px -17px rgba(0, 0, 0, .5);
+  position: relative;
 }
 
 .friendText:after {
   content: ''; 
   position: absolute;
-  left: 45px;
+  left: -15px;
   bottom: 0px;
   border: 12px solid transparent;
   border-right: 12px solid #F5F7FB;
@@ -57,7 +59,5 @@ position: relative;
   font-size: 10px;
   font-weight: 600;
   line-height: 12px;
-  position: absolute;
-  bottom: 5px;
-  left: 11px;
+  margin: 5px 11px;
 }
