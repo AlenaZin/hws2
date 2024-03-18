@@ -64,7 +64,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
             >
               {o.value}
             </span>
-            <span>{JSON.stringify({ value, o })}</span>
+            {/* <span>{JSON.stringify({ value, o })}</span> */}
           </label>
         ))
       : [];
