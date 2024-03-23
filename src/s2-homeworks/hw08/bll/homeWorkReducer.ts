@@ -19,7 +19,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
             if (action.payload.sort === 'up') {
                 users = users.sort((a, b) => a.name.localeCompare(b.name))
             } 
-            if (action.payload.sort === 'down') {
+            if (action.payload.sort === 'down' || action.payload.sort === '') {
                 users = users.sort((a, b) => b.name.localeCompare(a.name))
             }
             return users;
