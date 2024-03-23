@@ -30,6 +30,7 @@ const initialPeople: UserType[] = [
 const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
+    const [check, setCheck] = useState(false)
 
     const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
 
@@ -47,10 +48,12 @@ const HW8 = () => {
         setCurrentSort('down')
     }
     const check18 = () => {
+        const next = !check
+        const payload = {sort: currentSort, check: next}
         setPeople(
-            homeWorkReducer(initialPeople, {type: 'check', payload: 18})
+            homeWorkReducer(initialPeople, {type: 'check', payload })
         ) // совершеннолетние
-        setCurrentSort('18')
+        setCheck(next)
     }
 
     return (
@@ -76,7 +79,7 @@ const HW8 = () => {
                         <SuperButton
                             id={'hw8-button-18'}
                             onClick={check18}
-                            xType={currentSort === '18' ? '' : 'secondary'}
+                            xType={check ? '' : 'secondary'}
                         >
                             Check 18+
                         </SuperButton>
