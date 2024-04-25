@@ -1,14 +1,21 @@
 .buttonsContainer {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .clock {
+  width: 280px;
 }
 
 .watch {
+  margin-bottom: 5px;
 }
 
 .watch strong {
 }
 
 .more {
+  color: #7f7d7d;
+  padding-bottom: 10px;
 }
