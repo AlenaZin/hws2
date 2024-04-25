@@ -38,7 +38,7 @@ function Clock() {
     }
 
     const stringTime = date.toLocaleTimeString("en-US", { hour12: false })
-    const stringDate = date.toLocaleDateString() // день.месяц.год (01.02.2022) 
+    const stringDate = new Intl.DateTimeFormat("ru") // день.месяц.год (01.02.2022) 
 
     
     const stringDay = new Intl.DateTimeFormat("en-US", {weekday: "long"})  
@@ -63,7 +63,7 @@ function Clock() {
                     {show ? (
                         <>
                             <span id={'hw9-month'}>{stringMonth.format(date)}</span>,{' '}
-                            <span id={'hw9-date'}>{stringDate}</span>
+                            <span id={'hw9-date'}>{stringDate.format(date)}</span>
                         </>
                     ) : (
                         <>
