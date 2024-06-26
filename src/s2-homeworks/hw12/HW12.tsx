@@ -3,7 +3,8 @@ import s from './HW12.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect'
 import {useDispatch, useSelector} from 'react-redux'
-import {changeThemeId} from './bll/themeReducer'
+import {InitStateType, changeThemeId} from './bll/themeReducer'
+import { useAppDispatch, useAppSelector } from '../hw10/bll/store'
 
 /*
 * 1 - в файле themeReducer.ts написать нужные типы вместо any, дописать редьюсер
@@ -20,10 +21,11 @@ const themes = [
 
 const HW12 = () => {
     // взять ид темы из редакса
-    const themeId = 1
+    const themeId = useAppSelector(state=> state.theme.themeId)
+    const dispatch = useAppDispatch()
 
-    const change = (id: any) => { // дописать функцию
-
+    const change = (id: number) => { 
+        dispatch(changeThemeId(id))
     }
 
     useEffect(() => {
@@ -31,7 +33,7 @@ const HW12 = () => {
     }, [themeId])
 
     return (
-        <div id={'hw12'}>
+        <div id={'hw12'} data-theme={themeId}>
             <div id={'hw12-text'} className={s2.hwTitle}>
                 Homework #12
             </div>
@@ -40,8 +42,8 @@ const HW12 = () => {
                 <SuperSelect
                     id={'hw12-select-theme'}
                     className={s.select}
-                    // сделать переключение тем
-
+                    onChangeOption={change}
+                    options={themes}
                 />
             </div>
         </div>
