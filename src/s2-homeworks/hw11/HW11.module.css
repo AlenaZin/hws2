@@ -4,9 +4,12 @@
 
 .wrapper {
   display: flex;
+  position: relative;
 }
 
 .number {
   margin: 0 20px 0 10px;
-
+  position: absolute;
+  left: -35px;
+  top: 3px;
 }
