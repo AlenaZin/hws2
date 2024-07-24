@@ -10,6 +10,10 @@
 .number {
   margin: 0 20px 0 10px;
   position: absolute;
-  left: -35px;
+  left: -45px;
   top: 3px;
+}
+.number:nth-child(3) {
+  left: unset;
+  right: 40px;
 }
